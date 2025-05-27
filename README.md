@@ -1,66 +1,58 @@
-## Foundry
+# The ABI Encoding Game
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+An interactive learning game for mastering ABI encoding and decoding in the Ethereum Virtual Machine.
 
-Foundry consists of:
+## Overview
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+This project is an **interactive learning game** specifically designed for advanced Solidity developers who want to gain deep, hands-on mastery of **ABI encoding and decoding** in the Ethereum Virtual Machine.
 
-## Documentation
+Each level of the game is a standalone puzzle that challenges the player to write correct ABI encoding or decoding logic inside a Solidity function, guided by test-driven development.
 
-https://book.getfoundry.sh/
+## Project Structure
 
-## Usage
+This repository is organized as follows:
 
-### Build
+- `src/` - Contains all puzzles divided by difficulty level
+  - `basics/` - Basic level puzzles (Basic1st, Basic2nd, etc.)
+  - `advance/` - Advanced level puzzles (Advance1st, Advance2nd, etc.)
+  - `expert/` - Expert level puzzles (Expert1st, Expert2nd, etc.)
+- `test/` - Contains test files for all puzzles with the same structure
+- `solutions/` - Contains solution files (not committed to GitHub)
 
-```shell
-$ forge build
-```
+## How to Play
 
-### Test
+1. Clone this repository
+2. Install [Foundry](https://book.getfoundry.sh/getting-started/installation) if you haven't already
+3. Run `forge test` to verify the setup
+4. Navigate to the puzzle files in the `src/` directory
+5. Fill in the missing code in the designated areas
+6. Run `forge test --match <PuzzleName>` to check if your solution works
 
-```shell
-$ forge test
-```
+## Puzzle Structure
 
-### Format
+Each puzzle consists of two files:
+- A contract file in `src/` with a function that needs to be implemented
+- A test file in `test/` that verifies your implementation
 
-```shell
-$ forge fmt
-```
+## Learning Path
 
-### Gas Snapshots
+The puzzles are organized in increasing order of difficulty:
 
-```shell
-$ forge snapshot
-```
+1. **Basics**: Simple encoding of static types
+2. **Dynamic Types**: Working with strings, arrays and complex types 
+3. **Advanced**: Multi-dimensional arrays, nested structures
+4. **Expert**: Function selectors, calldata manipulation, and low-level calls
 
-### Anvil
+## Contributing
 
-```shell
-$ anvil
-```
+Contributions are welcome! If you have ideas for new puzzles or improvements to existing ones, please open an issue or submit a pull request.
 
-### Deploy
+## License
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### Cast
+## How to Use
 
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+1. Work on the puzzle files in the `src/` directory
+2. Run the tests to check if your implementation is correct
+3. Solutions can be stored in the `solutions/` directory for reference, but should not be committed to GitHub
